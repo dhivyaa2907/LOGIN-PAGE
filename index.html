@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,inital-scale=1.0">
+        <title>Login Page</title>
+        <link rel="stylesheets" href="styles.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <style>
+            .bg-container{
+    background-image: url("https://www.sagatraining.ca/wp-content/uploads/2018/10/background-images-for-login-form-8.jpg");
+     background-size: cover;
+     height: 100vh;
+}
+.main-card{
+    height: 430px;
+    width: 350px;
+    background-color: rgb(255,255,255); 
+     background-color: rgba(255,255,255, .1); 
+     color: white;
+      font-weight:italic;
+        border: 1px solid #f1f1f1;
+       position: absolute;
+      top: 50%;
+      left: 30%;
+      transform: translate(-50%, -50%);
+     padding:20px;
+}
+h1{
+    color: white;
+    font-size: 36px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    margin-top: 5px;
+}
+.username{
+    color: white;
+    font-size: 18px;
+
+}
+.password{
+    color: white;
+    font-size: 18px;
+}
+.btn{
+       box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+       background-color:rgb(182, 213, 253); 
+        border: none;
+        color:black;
+         text-align: center;
+        text-decoration: none;
+       display: inline-block;
+        font-size: 16px;
+        height: 30px;
+        width: 60px;
+        border-radius: 5px;
+   }
+   
+a{
+    color:white;
+    font-size: 14px;
+}
+
+
+        </style>
+      
+    </head>
+       <body>
+        <div class="bg-container">
+            
+          <div class="main-card">
+
+            <form id="loginForm">
+                
+                <i class='bx bxs-user-circle' style="font-size: 70px;margin-left: 140px;"></i>
+            <h1>LOGIN</h1>
+       
+        
+              <div class="username">
+                <label for="username">Username:</label> 
+               <input style="height:15px;font-size:12pt;" type="username" name="t1" id="t1" placeholder="Username" required onblur="check1()" >
+                <p id="p1"></p>
+                
+            </div>
+            <div class="password">
+                <label for="password">Password:</label> <br>
+                <input style="height:15px;font-size:12pt;" type="password" name="t2" id="t2" placeholder="password" required onblur="check2()" >
+                <i class='bx bxs-lock-alt'></i>
+                <p id="p2"></p>
+                
+           
+            </div>
+             <a href="#">Forget Password?</a>
+             <br><br>
+             
+             <input class="btn" type="submit" value="Login">
+             
+                <p style="color: white;">Don't have an account?   <a href="#"> Register</a></p>
+             
+            </form>
+             </div>
+        
+    </div>
+    <script>
+        function check1(){
+        var pattern=/^[a-zA-Z]{6}$/;
+        var input=document.getElementById("t1").value;
+
+        if(!pattern.test(input))
+          {
+            document.getElementById("p1").innerHTML="Invalid Username (the username must have atleast 6 character)";
+            document.getElementById("p1").style="color:red;font-size:12px;";
+          }
+          else{
+            document.getElementById("p1").innerHTML="Valid Username";
+            document.getElementById("p1").style="color:green;font-size:12px;";
+          }
+    }
+    function check2(){
+        var pattern=/^[a-zA-Z]{5}[0-9]{4}$/;
+        var input=document.getElementById("t2").value;
+
+        if(!pattern.test(input))
+          {
+            document.getElementById("p2").innerHTML="Invalid Password(the password must have atleast 5 alphabet and 4 numbers)";
+            document.getElementById("p2").style="color:red;font-size:12px;";
+          }
+          else{
+            document.getElementById("p2").innerHTML="Valid Password";
+            document.getElementById("p2").style="color:green;font-size:12px" ;
+          }
+    }
+    alert("successfully logged in !");
+    alert(" Username:dhivya \n Hashed Password:[object Promise]");
+    
+    
+      
+    
+       </script>
+       </body>
+       
+</html>
